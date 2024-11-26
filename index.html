@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Entry Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>Student Details Form</h2>
+    
+    <!-- Student Entry Form -->
+    <form action="submit_student.php" method="POST">
+        <!-- First Name -->
+        <label for="first_name">First Name:</label>
+        <input 
+            type="text" 
+            id="first_name" 
+            name="first_name" 
+            placeholder="Enter your first name" 
+            required 
+            pattern="[A-Za-z\s]+" 
+            title="First name should only contain letters and spaces.">
+        
+        <!-- Last Name -->
+        <label for="last_name">Last Name:</label>
+        <input 
+            type="text" 
+            id="last_name" 
+            name="last_name" 
+            placeholder="Enter your last name" 
+            required 
+            pattern="[A-Za-z\s]+" 
+            title="Last name should only contain letters and spaces.">
+        
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            placeholder="Enter your email address" 
+            required>
+        
+        <!-- Date of Birth -->
+        <label for="dob">Date of Birth:</label>
+        <input 
+            type="date" 
+            id="dob" 
+            name="dob" 
+            required>
+        
+        <!-- Batch -->
+        <label for="batch">Batch:</label>
+        <input 
+            type="text" 
+            id="batch" 
+            name="batch" 
+            placeholder="Enter batch year (e.g., 2024)" 
+            required 
+            pattern="\d{4}" 
+            title="Batch should be a four-digit year.">
+        
+        <!-- Course -->
+        <label for="course">Course:</label>
+        <select id="course" name="course" required>
+            <option value="">Select a course</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Electrical Engineering">Electrical Engineering</option>
+            <option value="Mechanical Engineering">Mechanical Engineering</option>
+            <option value="Biotechnology">Biotechnology</option>
+        </select>
+        
+        <!-- Submit Button -->
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
